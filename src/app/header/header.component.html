@@ -1,9 +1,15 @@
 <header class="app-header">
-  <div class="logo"><img src=".\assets\media\pdp.png" alt="Accueil" height="50px" width="50px" href="/"/> Portfolio</div>
+  <div class="logo">
+    <a routerLink="/" routerLinkActive="active">
+      <img src="assets/media/tete.jpg" alt="Accueil" height="50" width="50" class="pdpheader" />
+    </a>
+      <span class="text-header">Portfolio</span>
+  
+  </div>
   <nav class="nav-links">
-    <a routerLink="/" routerLinkActive="active">Accueil</a>
+    <a routerLink="/" routerLinkActive="active" class="accueil-link">Accueil</a>
     <a routerLink="/scolarite" routerLinkActive="active">Scolarité/Études</a>
     <a routerLink="/pro" routerLinkActive="active">Expériences Professionnelles</a>
-    <a routerLink="/projets" routerLinkActive="active">Mes projets</a>
+    <a routerLink="/mes-projets" routerLinkActive="active">Mes projets</a>
   </nav>
 </header>
