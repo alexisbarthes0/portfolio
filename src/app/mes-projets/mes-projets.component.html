@@ -1,6 +1,40 @@
 <div class="app-wrapper">
     <app-header></app-header>
+  
     <main class="main-content">
+      <div class="page">
+
+          <span class="text-intro">Retrouvez mes projets principaux: <br> <br></span>
+  
+          <div class="widget">
+            <div class="scroll-container-wrapper">
+              <button class="nav left" (click)="scrollLeft()">❮</button>
+  
+              <div class="scroll-container" #scrollWidget
+  (mouseenter)="pauseAutoScroll()"
+  (mouseleave)="resumeAutoScroll()">
+
+              <div class="page" *ngFor="let page of pages">
+                <div class="page-content">
+                  <div class="text-section">
+                    <h2><a [routerLink]="page.link">{{ page.titre }}</a></h2>
+                    <p *ngFor="let line of page.lines">{{ line }}</p>
+                  </div>
+                  <div class="image-section">
+                    <img [src]="page.image" [alt]="page.titre" />
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+              <button class="nav right" (click)="scrollRight()">❯</button>
+            </div>
+          </div>
+          </div>
+
+  
+      <router-outlet></router-outlet>
     </main>
+  
     <app-footer></app-footer>
-</div>
+  </div>
