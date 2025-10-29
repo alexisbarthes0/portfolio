@@ -1,4 +1,6 @@
 import { Component, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
+import { ProjectService } from 'api/services/project.service';
+
 @Component({
   selector: 'accueil',
   templateUrl: './accueil.component.html',
@@ -6,6 +8,7 @@ import { Component, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@ang
 })
 export class AccueilComponent implements AfterViewInit, OnDestroy {
   @ViewChild('scrollWidget', { static: false }) scrollWidget!: ElementRef;
+  projects: any[] = [];
 
   currentPageIndex = 0;
   autoScrollInterval: any;

@@ -12,6 +12,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { MentionsLegalesComponent } from './mentions-legales/mentions-legales.component';
 import { ContactComponent } from './contact/contact.component';
 import { SituationComponent } from './situation/situation.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SituationComponent } from './situation/situation.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
