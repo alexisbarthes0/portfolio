@@ -13,9 +13,9 @@ export class MesProjetsComponent implements AfterViewInit, OnDestroy {
 
   pages = [
     {
-      titre: 'Projet 1',
-      lines: ['Description projet 1...', ''],
-      link: '/',
+      titre: 'Ordinateur de plongée',
+      lines: ["Ceci est un ordinateur de plongée permettant l'analyse d'une plongée après avoir rentrée les données ainsi qu'une analyse pré-plongée", ''],
+      link: '/plongée',
       image:'assets/media/background.jpg'
     },
     {

@@ -21,7 +21,7 @@
                     <p *ngFor="let line of page.lines">{{ line }}</p>
                   </div>
                   <div class="image-section">
-                    <img [src]="page.image" [alt]="page.titre" />
+                    <img [src]="page.image" [alt]="page.titre" [routerLink]="page.link" />
                   </div>
                 </div>
               </div>

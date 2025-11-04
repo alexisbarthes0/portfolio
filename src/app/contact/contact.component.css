@@ -2,7 +2,7 @@
   max-width: 500px;
   margin: 0.2rem auto;
   padding: 0.5rem;
-  background: #ffffff;
+  background: #EBA99D;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -57,7 +57,7 @@ input:focus, textarea:focus {
 .btn-submit {
   width: 100%;
   padding: 0.9rem;
-  background-color: #0078d7;
+  background-color: #1e1e2f;
   color: white;
   border: none;
   border-radius: 8px;

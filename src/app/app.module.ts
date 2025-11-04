@@ -13,6 +13,11 @@ import { ContactComponent } from './contact/contact.component';
 import { SituationComponent } from './situation/situation.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PlongeeLoginComponent } from './plongee-login/plongee-login.component';
+import { PlongeeFrontComponent } from './plongee-front/plongee-front.component';
+import { PlongeeHeaderComponent } from './plongee-header/plongee-header.component';
+import { PlongeeDataComponent } from './plongee-data/plongee-data.component';
+import { PlongeeRegisterComponent } from './plongee-register/plongee-register.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +31,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     MentionsLegalesComponent,
     ContactComponent,
     SituationComponent,
+    PlongeeLoginComponent,
+    PlongeeFrontComponent,
+    PlongeeHeaderComponent,
+    PlongeeDataComponent,
+    PlongeeRegisterComponent,
   ],
   imports: [
     BrowserModule,
