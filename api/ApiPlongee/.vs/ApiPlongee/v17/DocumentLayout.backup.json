@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\abart\\portfolio\\api\\ApiPlongee\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{454CA625-CDB1-4640-B553-1AA47543D739}|ApiPlongee\\ApiPlongee.csproj|c:\\users\\abart\\portfolio\\api\\apiplongee\\apiplongee\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{454CA625-CDB1-4640-B553-1AA47543D739}|ApiPlongee\\ApiPlongee.csproj|solutionrelative:apiplongee\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\abart\\portfolio\\api\\ApiPlongee\\ApiPlongee\\appsettings.json",
+              "RelativeDocumentMoniker": "ApiPlongee\\appsettings.json",
+              "ToolTip": "C:\\Users\\abart\\portfolio\\api\\ApiPlongee\\ApiPlongee\\appsettings.json",
+              "RelativeToolTip": "ApiPlongee\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-04T13:32:40.411Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

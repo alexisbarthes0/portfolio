@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("PortfolioApi")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("ApiPlongee")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c89a8c284fcd26d57210cd529944c95c95893b6b")]
-[assembly: System.Reflection.AssemblyProductAttribute("PortfolioApi")]
-[assembly: System.Reflection.AssemblyTitleAttribute("PortfolioApi")]
+[assembly: System.Reflection.AssemblyProductAttribute("ApiPlongee")]
+[assembly: System.Reflection.AssemblyTitleAttribute("ApiPlongee")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Généré par la classe MSBuild WriteCodeFragment.

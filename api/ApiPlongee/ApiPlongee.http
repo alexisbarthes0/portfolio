@@ -1,0 +1,6 @@
+@ApiPlongee_HostAddress = http://localhost:5218
+
+GET {{ApiPlongee_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
