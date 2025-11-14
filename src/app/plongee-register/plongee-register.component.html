@@ -1,39 +1,48 @@
 <div class="app-wrapper">
-    <app-plongee-header></app-plongee-header>
-    <main class="main-content">
+  <app-plongee-header></app-plongee-header>
+  <main class="main-content">
     <div class="login-container">
 
-  <div class="login-box">
-    <form (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="identifiant">Identifiant</label>
-        <input type="text" id="identifiant" name="identifiant" />
-      </div>
+      <div class="login-box">
+        <form (ngSubmit)="onSubmit()">
 
-      <div class="form-group">
-        <label for="motdepasse">Mot de passe</label>
-        <input type="password" id="motdepasse" name="motdepasse" />
-      </div>
-      <div class="form-group">
-        <label for="nom">Nom</label>
-        <input type="text" id="nom" name="nom" />
-      </div>
-            <div class="form-group">
-        <label for="prenom">Prénom</label>
-        <input type="text" id="prenom" name="prenom" />
-      </div>
-            <div class="form-group">
-        <label for="adresse_mail">Adresse email</label>
-        <input type="text" id="adresse_mail" name="adresse_mail" />
-      </div>
-      <button type="submit" class="login-btn">Créer un compte</button>
+          <div class="form-group">
+            <label for="identifiant">Identifiant</label>
+            <input type="text" id="identifiant" name="identifiant"
+              [(ngModel)]="user.identifiant" />
+          </div>
 
-      <p class="register-text">
-        Déjà un compte? <a routerLink="/plongée-login">Connectez-vous ici!</a>
-      </p>
-    </form>
-  </div>
-</div>
+          <div class="form-group">
+            <label for="motdepasse">Mot de passe</label>
+            <input type="password" id="motdepasse" name="motDePasse"
+              [(ngModel)]="user.motDePasse" />
+          </div>
 
-    </main>
+          <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom"
+              [(ngModel)]="user.nom" />
+          </div>
+
+          <div class="form-group">
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" name="prenom"
+              [(ngModel)]="user.prenom" />
+          </div>
+
+          <div class="form-group">
+            <label for="adresseMail">Adresse email</label>
+            <input type="text" id="adresseMail" name="adresseMail"
+              [(ngModel)]="user.adresseMail" />
+          </div>
+
+          <button type="submit" class="login-btn">Créer un compte</button>
+
+          <p class="register-text">
+            Déjà un compte? <a routerLink="/plongée-login">Connectez-vous ici!</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </main>
 </div>

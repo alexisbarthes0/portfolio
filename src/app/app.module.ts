@@ -12,7 +12,7 @@ import { MentionsLegalesComponent } from './mentions-legales/mentions-legales.co
 import { ContactComponent } from './contact/contact.component';
 import { SituationComponent } from './situation/situation.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PlongeeLoginComponent } from './plongee-login/plongee-login.component';
 import { PlongeeFrontComponent } from './plongee-front/plongee-front.component';
 import { PlongeeHeaderComponent } from './plongee-header/plongee-header.component';
@@ -41,7 +41,8 @@ import { PlongeeRegisterComponent } from './plongee-register/plongee-register.co
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

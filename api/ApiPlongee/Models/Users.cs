@@ -7,24 +7,24 @@ namespace ApiPlongee.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string? Id { get; set; }
-
-        [BsonElement("identifiant")]
-        public string Identifiant { get; set; } = null!;
-
-        [BsonElement("motDePasse")]
-        public string MotDePasse { get; set; } = null!;
+        public string Id { get; set; }
 
         [BsonElement("nom")]
-        public string Nom { get; set; } = null!;
+        public string Nom { get; set; }
 
         [BsonElement("prenom")]
-        public string Prenom { get; set; } = null!;
+        public string Prenom { get; set; }
 
-        [BsonElement("adresseMail")]
-        public string AdresseMail { get; set; } = null!;
+        [BsonElement("adresse_mail")]
+        public string AdresseMail { get; set; }
+
+        [BsonElement("identifiant")]
+        public string Identifiant { get; set; }
+
+        [BsonElement("mot_de_passe")]
+        public string MotDePasse { get; set; }
 
         [BsonElement("niveau")]
-        public string Niveau { get; set; } = string.Empty;
+        public string Niveau { get; set; }
     }
 }
