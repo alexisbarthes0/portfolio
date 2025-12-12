@@ -27,6 +27,19 @@ public class UserService
         await _users.InsertOneAsync(user);
     }
 
-    public bool VerifyPassword(string entered, string storedHash) =>
-        BCrypt.Net.BCrypt.Verify(entered, storedHash);
+    public bool VerifyPassword(string entered, string storedHash)
+    {
+        if (string.IsNullOrWhiteSpace(storedHash))
+            return false;
+
+        // Si le mot de passe stocké n'est pas un hash bcrypt (ex: données existantes en clair),
+        // on compare en clair pour permettre la connexion, puis il faudra réenregistrer en hashé.
+        var looksLikeBcrypt = storedHash.StartsWith("$2");
+        if (!looksLikeBcrypt)
+        {
+            return entered == storedHash;
+        }
+
+        return BCrypt.Net.BCrypt.Verify(entered, storedHash);
+    }
 }

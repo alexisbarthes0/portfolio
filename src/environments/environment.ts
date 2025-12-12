@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  // Base URL de l'API Plongée (adapter au port sur lequel l'API .NET tourne)
+  apiBase: 'http://localhost:5218/api'
 };
 
 /*
