@@ -6,6 +6,7 @@ C:\Users\abart\portfolio\PortfolioApi\PortfolioApi\bin\Debug\net8.0\PortfolioApi
 C:\Users\abart\portfolio\PortfolioApi\PortfolioApi\bin\Debug\net8.0\PortfolioApi.runtimeconfig.json
 C:\Users\abart\portfolio\PortfolioApi\PortfolioApi\bin\Debug\net8.0\PortfolioApi.dll
 C:\Users\abart\portfolio\PortfolioApi\PortfolioApi\bin\Debug\net8.0\PortfolioApi.pdb
+C:\Users\abart\portfolio\PortfolioApi\PortfolioApi\bin\Debug\net8.0\BCrypt.Net-Next.dll
 C:\Users\abart\portfolio\PortfolioApi\PortfolioApi\bin\Debug\net8.0\DnsClient.dll
 C:\Users\abart\portfolio\PortfolioApi\PortfolioApi\bin\Debug\net8.0\Microsoft.OpenApi.dll
 C:\Users\abart\portfolio\PortfolioApi\PortfolioApi\bin\Debug\net8.0\MongoDB.Bson.dll

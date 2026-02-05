@@ -3,25 +3,27 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 
-export interface ContactMessagePayload {
-  email: string;
-  nom: string;
-  message: string;
+export interface AdminLoginPayload {
+  login: string;
+  password: string;
+}
+
+export interface AdminLoginResponse {
+  success: boolean;
 }
 
 @Injectable({
   providedIn: 'root'
 })
-export class ContactService {
+export class AdminAuthService {
 
   private readonly baseUrl = environment.apiBase;
 
   constructor(private http: HttpClient) {}
 
-  sendMessage(payload: ContactMessagePayload): Observable<void> {
-    return this.http.post<void>(`${this.baseUrl}/contact`, payload);
+  login(payload: AdminLoginPayload): Observable<AdminLoginResponse> {
+    return this.http.post<AdminLoginResponse>(`${this.baseUrl}/admin/login`, payload);
   }
 }
-
 
 

@@ -18,6 +18,8 @@ import { PlongeeFrontComponent } from './plongee-front/plongee-front.component';
 import { PlongeeHeaderComponent } from './plongee-header/plongee-header.component';
 import { PlongeeDataComponent } from './plongee-data/plongee-data.component';
 import { PlongeeRegisterComponent } from './plongee-register/plongee-register.component';
+import { AdminComponent } from 'src/app/admin/admin.component';
+import { AdminPortalComponent } from './admin-portal/admin-portal.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { PlongeeRegisterComponent } from './plongee-register/plongee-register.co
     PlongeeHeaderComponent,
     PlongeeDataComponent,
     PlongeeRegisterComponent,
+    AdminComponent,
+    AdminPortalComponent,
   ],
   imports: [
     BrowserModule,

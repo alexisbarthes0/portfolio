@@ -1,4 +1,5 @@
 using PortfolioApi;
+using PortfolioApi.Models;
 using PortfolioApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,6 +25,8 @@ builder.Services.AddCors(options =>
 builder.Services.Configure<MongoDbSettings>(
     builder.Configuration.GetSection("MongoDb"));
 builder.Services.AddSingleton<MessageService>();
+builder.Services.AddSingleton<PasswordHasher>();
+builder.Services.AddSingleton<AdminLoginService>();
 
 // Add services to the container.
 builder.Services.AddControllers();
@@ -32,6 +35,19 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+// Initialisation d'un compte admin par défaut si nécessaire
+using (var scope = app.Services.CreateScope())
+{
+    var adminService = scope.ServiceProvider.GetRequiredService<AdminLoginService>();
+    var existingAdmin = adminService.GetByLoginAsync(AdminLoginSeed.DefaultLogin).GetAwaiter().GetResult();
+    if (existingAdmin is null)
+    {
+        adminService.CreateAsync(AdminLoginSeed.DefaultLogin, AdminLoginSeed.DefaultPassword)
+            .GetAwaiter()
+            .GetResult();
+    }
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

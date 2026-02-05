@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "EY+NIsiJGZ0=",
+  "dgSpecHash": "XjzRHUriAaU=",
   "success": true,
   "projectFilePath": "C:\\Users\\abart\\portfolio\\PortfolioApi\\PortfolioApi\\PortfolioApi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\abart\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\abart\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\abart\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\abart\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\2.0.0\\microsoft.extensions.logging.abstractions.2.0.0.nupkg.sha512",

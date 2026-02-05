@@ -1,4 +1,5 @@
-import { Component, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit, OnDestroy, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'accueil',
@@ -73,5 +74,32 @@ resumeAutoScroll() {
     this.currentPageIndex =
       (this.currentPageIndex + 1) % this.pages.length;
     this.scrollToPage(this.currentPageIndex);
+  }
+  private adminSequence = ['a', 'd', 'm', 'i', 'n'];
+  private typedKeys: string[] = [];
+   constructor(private router: Router) {}
+
+  @HostListener('document:keydown', ['$event'])
+  onKeyDown(event: KeyboardEvent) {
+    const key = event.key.toLowerCase();
+
+    // (optionnel) ignorer si on tape dans un input / textarea
+    const target = event.target as HTMLElement;
+    if (['INPUT', 'TEXTAREA'].includes(target.tagName)) {
+      return;
+    }
+
+    this.typedKeys.push(key);
+    if (this.typedKeys.length > this.adminSequence.length) {
+      this.typedKeys.shift();
+    }
+
+    const isMatch = this.adminSequence.every(
+      (k, i) => this.typedKeys[i] === k
+    );
+
+    if (isMatch) {
+      this.router.navigate(['/admin']);
+    }
   }
 }
