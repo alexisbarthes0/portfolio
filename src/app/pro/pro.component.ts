@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjectService} from 'api/services/project.service';
 
 @Component({
   selector: 'app-pro',

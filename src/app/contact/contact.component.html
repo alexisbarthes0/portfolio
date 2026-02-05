@@ -42,16 +42,23 @@
             id="message"
             formControlName="message"
             rows="5"
-            placeholder="Votre message"
+            placeholder="Votre message (200 caractères maximum)"
             [ngClass]="{ 'is-invalid': submitted && f['message'].errors }"
           ></textarea>
           <div *ngIf="submitted && f['message'].errors" class="invalid-feedback">
             <small *ngIf="f['message'].errors['required']">Le message est requis.</small>
             <small *ngIf="f['message'].errors['minlength']">Minimum 10 caractères.</small>
+            <small *ngIf="f['message'].errors['maxlength']">Maximum 200 caractères</small>
           </div>
         </div>
 
-        <button type="submit" class="btn-submit">Envoyer</button>
+        <button type="submit" class="btn-submit" [disabled]="isSending">
+          {{ isSending ? 'Envoi en cours...' : 'Envoyer' }}
+        </button>
+
+        <div *ngIf="sendError" class="error-message">
+          {{ sendError }}
+        </div>
       </form>
     </div>
   </main>

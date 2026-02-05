@@ -1,11 +1,8 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-using MongoDB.Bson.Serialization.Attributes;
-
 namespace ApiPlongee.Models
 {
-    [BsonIgnoreExtraElements] // ignore any fields not mapped (ex: "type")
     public class User
     {
         [BsonId]

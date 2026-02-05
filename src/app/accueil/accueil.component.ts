@@ -1,5 +1,4 @@
 import { Component, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
-import { ProjectService } from 'api/services/project.service';
 
 @Component({
   selector: 'accueil',

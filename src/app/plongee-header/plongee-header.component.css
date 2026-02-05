@@ -17,17 +17,13 @@
     display: flex;
     align-items: center;
   
-    a, .logout-btn {
+    a {
       margin-left: 1.5rem;
       padding: 0.5rem 1rem; 
       color: white;
       text-decoration: none;
       font-weight: 500;
       transition: background-color 0.3s, color 0.3s, border-radius 0.3s;
-      border: none;
-      background: transparent;
-      cursor: pointer;
-      font: inherit;
   
       &:hover,
       &.active {
@@ -39,10 +35,6 @@
           color: #61dafb;
           background-color: rgba(0, 0, 0, 0.4);
         }
-    }
-
-    .logout-btn {
-      font-size: 1rem;
     }
   }
 }

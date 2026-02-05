@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -17,7 +16,7 @@ export class PlongeeLoginComponent {
     motDePasse: ['', Validators.required],
   });
 
-  constructor(private fb: FormBuilder, private auth: AuthService, private router: Router) {}
+  constructor(private fb: FormBuilder, private auth: AuthService) {}
 
   onSubmit() {
     if (this.form.invalid) return;
@@ -29,12 +28,12 @@ export class PlongeeLoginComponent {
     }).subscribe({
       next: (res) => {
         this.loading = false;
-        this.router.navigate(['/plongée']);
+        // TODO: stocker le user/token et rediriger
+        console.log('login ok', res);
       },
       error: (err) => {
         this.loading = false;
-        const message = err?.error?.message || err?.error || err?.message;
-        this.error = message || 'Échec de connexion';
+        this.error = err?.error || 'Échec de connexion';
       }
     });
   }

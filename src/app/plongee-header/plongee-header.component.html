@@ -9,8 +9,7 @@
   <nav class="nav-links">
     <a routerLink="/plongée" routerLinkActive="active">Accueil</a>
     <a routerLink="/mes-plongées" routerLinkActive="active">Mes plongées</a>
-    <a *ngIf="!isLoggedIn" routerLink="/plongée-login" routerLinkActive="active">Login</a>
-    <a *ngIf="isLoggedIn" href="javascript:void(0)" class="logout-btn" (click)="logout()">Se déconnecter</a>
+    <a routerLink="/plongée-login" routerLinkActive="active">Login</a>
 
   </nav>
 </header>
