@@ -9,6 +9,14 @@ export interface ContactMessagePayload {
   message: string;
 }
 
+export interface ContactMessage {
+  id: string;
+  email: string;
+  nom: string;
+  message: string;
+  date: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -21,7 +29,9 @@ export class ContactService {
   sendMessage(payload: ContactMessagePayload): Observable<void> {
     return this.http.post<void>(`${this.baseUrl}/contact`, payload);
   }
+
+  getMessages(): Observable<ContactMessage[]> {
+    return this.http.get<ContactMessage[]>(`${this.baseUrl}/contact`);
+  }
 }
-
-
 

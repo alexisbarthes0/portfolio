@@ -20,6 +20,7 @@ import { PlongeeDataComponent } from './plongee-data/plongee-data.component';
 import { PlongeeRegisterComponent } from './plongee-register/plongee-register.component';
 import { AdminComponent } from 'src/app/admin/admin.component';
 import { AdminPortalComponent } from './admin-portal/admin-portal.component';
+import { DossierProComponent } from './dossier-pro/dossier-pro.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { AdminPortalComponent } from './admin-portal/admin-portal.component';
     PlongeeRegisterComponent,
     AdminComponent,
     AdminPortalComponent,
+    DossierProComponent,
   ],
   imports: [
     BrowserModule,

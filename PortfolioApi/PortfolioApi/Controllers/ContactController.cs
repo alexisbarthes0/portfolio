@@ -15,6 +15,13 @@ public class ContactController : ControllerBase
         _messageService = messageService;
     }
 
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<Message>>> Get()
+    {
+        var messages = await _messageService.GetAllAsync();
+        return Ok(messages);
+    }
+
     [HttpPost]
     public async Task<IActionResult> Post([FromBody] CreateMessageDto dto)
     {
@@ -38,6 +45,8 @@ public class ContactController : ControllerBase
         return Ok();
     }
 }
+
+
 
 
 

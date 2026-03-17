@@ -14,6 +14,7 @@ import { PlongeeRegisterComponent } from './plongee-register/plongee-register.co
 import { AdminComponent } from './admin/admin.component';
 import { AdminPortalComponent } from './admin-portal/admin-portal.component';
 import { AdminAuthGuard } from './admin/admin-auth.guard';
+import { DossierProComponent } from './dossier-pro/dossier-pro.component';
 const routes: Routes = [
   {path: 'pro' , component:ProComponent},
   {path: 'scolarite', component:ScolariteComponent},
@@ -27,7 +28,8 @@ const routes: Routes = [
   {path:'mes-plongées', component:PlongeeDataComponent},
   {path:'plongée-register', component:PlongeeRegisterComponent},
   {path:'admin', component:AdminComponent},
-  {path:'admin-portal', component:AdminPortalComponent, canActivate:[AdminAuthGuard]}
+  {path:'admin-portal', component:AdminPortalComponent, canActivate:[AdminAuthGuard]},
+  {path:'dossier-pro', component: DossierProComponent}
 ];
 
 @NgModule({

@@ -1,1 +1,38 @@
-<p>admin-portal works!</p>
+    <app-header></app-header>
+
+<div class="admin-messages-container">
+  <h2>Messages de contact</h2>
+
+  <div *ngIf="isLoading" class="loading">
+    Chargement des messages...
+  </div>
+
+  <div *ngIf="loadError" class="error">
+    {{ loadError }}
+  </div>
+
+  <div *ngIf="!isLoading && !loadError">
+    <div *ngIf="messages.length === 0" class="empty">
+      Aucun message pour le moment.
+    </div>
+
+    <table *ngIf="messages.length > 0" class="messages-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Email</th>
+          <th>Message</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let msg of messages">
+          <td>{{ msg.date }}</td>
+          <td>{{ msg.email }}</td>
+          <td>{{ msg.message }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+    <app-footer></app-footer>

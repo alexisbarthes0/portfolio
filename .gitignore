@@ -41,3 +41,17 @@ testem.log
 .DS_Store
 Thumbs.db
 PortfolioApi/.vs/PortfolioApi/FileContentIndex/8f9148e5-1f8c-4973-98f0-4652736509c2.vsidx
+PortfolioApi/PortfolioApi/bin/Debug/net8.0/PortfolioApi.exe
+PortfolioApi/PortfolioApi/bin/Debug/net8.0/PortfolioApi.dll
+PortfolioApi/PortfolioApi/obj/Debug/net8.0/ref/PortfolioApi.dll
+PortfolioApi/PortfolioApi/obj/Debug/net8.0/refint/PortfolioApi.dll
+PortfolioApi/PortfolioApi/obj/Debug/net8.0/rjsmcshtml.dswa.cache.json
+PortfolioApi/PortfolioApi/obj/Debug/net8.0/rjsmrazor.dswa.cache.json
+PortfolioApi/PortfolioApi/obj/Debug/net8.0/rpswa.dswa.cache.json
+PortfolioApi/PortfolioApi/PortfolioApi.csproj
+*.pdb
+*.exe
+*.dll
+PortfolioApi/PortfolioApi/obj/Debug/net8.0/PortfolioApi.AssemblyInfo.cs
+PortfolioApi/PortfolioApi/obj/Debug/net8.0/PortfolioApi.AssemblyInfoInputs.cache
+*.cache

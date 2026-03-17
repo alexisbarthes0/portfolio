@@ -1,0 +1,17 @@
+.presentation-exter{
+    background-color: aliceblue;
+    margin-left: 10rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    margin-right: 10rem;
+    border-radius: 5px;
+}
+.presentation-inter{
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    margin-right: 2rem;
+}
+li{
+    margin-left: 2rem;
+}

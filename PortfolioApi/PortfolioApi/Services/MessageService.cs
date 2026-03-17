@@ -22,7 +22,16 @@ public class MessageService
     {
         await _messagesCollection.InsertOneAsync(message);
     }
+
+    public async Task<List<Message>> GetAllAsync()
+    {
+        return await _messagesCollection
+            .Find(_ => true)
+            .ToListAsync();
+    }
 }
+
+
 
 
 
