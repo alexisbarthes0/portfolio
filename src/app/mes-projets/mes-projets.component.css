@@ -87,7 +87,7 @@
   overflow-x: auto;
   scrollbar-width: none; /* firefox */
   -ms-overflow-style: none; /* IE */
-   background-color: #EBA99D;
+  background: linear-gradient(to right, #ff512f, #dd2476);
 }
 
 .scroll-container::-webkit-scrollbar {
