@@ -3,6 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace ApiPlongee.Models;
 
+[BsonIgnoreExtraElements]
 public class Plongee
 {
     [BsonId]
@@ -21,6 +22,21 @@ public class Plongee
     public Gaz Gaz { get; set; } = new();
     public string Description { get; set; } = string.Empty;
     public string Palanquee { get; set; } = string.Empty;
+
+    [BsonElement("directeurPlongee")]
+    public string DirecteurPlongee { get; set; } = string.Empty;
+
+    [BsonElement("temperatureEau")]
+    public string? TemperatureEau { get; set; }
+
+    [BsonElement("especesObservees")]
+    public string? EspecesObservees { get; set; }
+
+    [BsonElement("evenementsMarquants")]
+    public string? EvenementsMarquants { get; set; }
+
+    [BsonElement("remarques")]
+    public string? Remarques { get; set; }
 }
 
 public class Gaz

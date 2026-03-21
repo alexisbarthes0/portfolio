@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../environments/environment';
 
 export interface RegisterRequest {
   identifiant: string;
@@ -15,19 +16,33 @@ export interface LoginRequest {
   motDePasse: string;
 }
 
+export interface LoginResponseUser {
+  id: string;
+  identifiant: string;
+  nom: string;
+  prenom: string;
+  adresseMail: string;
+  niveau?: string | null;
+}
+
+export interface LoginResponse {
+  message: string;
+  user: LoginResponseUser;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'https://localhost:5218/api/login';
+  private readonly loginBase = `${environment.apiBase}/login`;
 
   constructor(private http: HttpClient) {}
 
-  register(userData: RegisterRequest): Observable<any> {
-    return this.http.post(`${this.apiUrl}/register`, userData);
+  register(userData: RegisterRequest): Observable<{ message: string }> {
+    return this.http.post<{ message: string }>(`${this.loginBase}/register`, userData);
   }
 
-  login(credentials: LoginRequest): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login`, credentials);
+  login(credentials: LoginRequest): Observable<LoginResponse> {
+    return this.http.post<LoginResponse>(`${this.loginBase}/login`, credentials);
   }
 }

@@ -27,6 +27,47 @@ public class UserService
         await _users.InsertOneAsync(user);
     }
 
-    public bool VerifyPassword(string entered, string storedHash) =>
-        BCrypt.Net.BCrypt.Verify(entered, storedHash);
+    public async Task<bool> VerifyPasswordAsync(string entered, User user)
+    {
+        if (string.IsNullOrWhiteSpace(entered) || string.IsNullOrWhiteSpace(user.MotDePasse))
+            return false;
+
+        var stored = user.MotDePasse.Trim();
+
+        if (LooksLikeBcryptHash(stored))
+        {
+            try
+            {
+                return BCrypt.Net.BCrypt.Verify(entered, stored);
+            }
+            catch (SaltParseException)
+            {
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        if (entered == stored)
+        {
+            var newHash = BCrypt.Net.BCrypt.HashPassword(entered);
+            await _users.UpdateOneAsync(
+                u => u.Id == user.Id,
+                Builders<User>.Update.Set(u => u.MotDePasse, newHash));
+            return true;
+        }
+
+        return false;
+    }
+
+    private static bool LooksLikeBcryptHash(string s)
+    {
+        if (s.Length < 59)
+            return false;
+        return s.StartsWith("$2a$", StringComparison.Ordinal)
+            || s.StartsWith("$2b$", StringComparison.Ordinal)
+            || s.StartsWith("$2y$", StringComparison.Ordinal);
+    }
 }

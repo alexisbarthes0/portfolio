@@ -53,3 +53,21 @@
     cursor:no-drop
   }
 }
+
+.logout-btn {
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  background: transparent;
+  color: white;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.logout-btn:hover {
+  color: #61dafb;
+  background-color: rgba(0, 0, 0, 0.4);
+}

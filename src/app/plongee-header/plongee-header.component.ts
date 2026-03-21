@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { PlongeeSessionService } from '../plongee-session.service';
 
 @Component({
   selector: 'app-plongee-header',
   templateUrl: './plongee-header.component.html',
   styleUrls: ['./plongee-header.component.css']
 })
-export class PlongeeHeaderComponent implements OnInit {
+export class PlongeeHeaderComponent {
+  constructor(
+    public session: PlongeeSessionService,
+    private router: Router
+  ) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  logout(): void {
+    this.session.clear();
+    this.router.navigate(['/plongée-login']);
   }
-
 }

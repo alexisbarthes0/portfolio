@@ -1,0 +1,127 @@
+.carnet-page {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.carnet-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.carnet-title {
+  margin: 0;
+  color: #1e1e2f;
+  font-size: 1.75rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  background: linear-gradient(to right, #ff512f, #dd2476);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(221, 36, 118, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(221, 36, 118, 0.45);
+}
+
+.status-msg {
+  text-align: center;
+  color: #333;
+}
+
+.status-msg.error {
+  color: #c62828;
+}
+
+.empty-state {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  color: #444;
+  border: 2px solid transparent;
+  border-image: linear-gradient(to right, #ff512f, #dd2476);
+  border-image-slice: 1;
+}
+
+.dive-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.dive-card {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #dd2476;
+}
+
+.dive-card-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.dive-lieu {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1e1e2f;
+}
+
+.dive-date {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.dive-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.75rem 1.25rem;
+  margin: 0;
+}
+
+.dive-meta dt {
+  margin: 0;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #888;
+}
+
+.dive-meta dd {
+  margin: 0.15rem 0 0;
+  font-weight: 500;
+  color: #333;
+}
+
+.dive-extra {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.dive-extra p {
+  margin: 0.35rem 0;
+}

@@ -18,6 +18,7 @@ import { PlongeeFrontComponent } from './plongee-front/plongee-front.component';
 import { PlongeeHeaderComponent } from './plongee-header/plongee-header.component';
 import { PlongeeDataComponent } from './plongee-data/plongee-data.component';
 import { PlongeeRegisterComponent } from './plongee-register/plongee-register.component';
+import { PlongeeNouvelleComponent } from './plongee-nouvelle/plongee-nouvelle.component';
 import { AdminComponent } from 'src/app/admin/admin.component';
 import { AdminPortalComponent } from './admin-portal/admin-portal.component';
 import { DossierProComponent } from './dossier-pro/dossier-pro.component';
@@ -39,6 +40,7 @@ import { DossierProComponent } from './dossier-pro/dossier-pro.component';
     PlongeeHeaderComponent,
     PlongeeDataComponent,
     PlongeeRegisterComponent,
+    PlongeeNouvelleComponent,
     AdminComponent,
     AdminPortalComponent,
     DossierProComponent,

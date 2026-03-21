@@ -1,0 +1,55 @@
+<div class="app-wrapper">
+  <app-plongee-header></app-plongee-header>
+  <main class="main-content">
+    <div class="page-inner">
+      <h1 class="page-title">Nouvelle plongée</h1>
+      <div class="form-card">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="lieu">Lieu</label>
+            <input type="text" id="lieu" formControlName="lieu" />
+          </div>
+          <div class="form-group">
+            <label for="date">Date</label>
+            <input type="date" id="date" formControlName="date" />
+          </div>
+          <div class="form-group">
+            <label for="palanquee">Palanquée</label>
+            <input type="text" id="palanquee" formControlName="palanquee" />
+          </div>
+          <div class="form-group">
+            <label for="directeur">Directeur de plongée</label>
+            <input type="text" id="directeur" formControlName="directeurPlongee" />
+          </div>
+          <div class="form-group">
+            <label for="prof">Profondeur max (m)</label>
+            <input type="number" id="prof" formControlName="profMax" min="0" />
+          </div>
+          <div class="form-group">
+            <label for="temp">Température de l’eau</label>
+            <input type="text" id="temp" formControlName="temperatureEau" placeholder="ex. 24 °C" />
+          </div>
+          <div class="form-group">
+            <label for="especes">Espèces observées</label>
+            <textarea id="especes" rows="3" formControlName="especesObservees"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="events">Évènements marquants</label>
+            <textarea id="events" rows="3" formControlName="evenementsMarquants"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="remarques">Autres remarques</label>
+            <textarea id="remarques" rows="3" formControlName="remarques"></textarea>
+          </div>
+          <button type="submit" class="primary-btn" [disabled]="loading || form.invalid">
+            Enregistrer
+          </button>
+          <p *ngIf="error" class="error">{{ error }}</p>
+        </form>
+      </div>
+      <p class="back-row">
+        <a routerLink="/plongée">Retour au carnet</a>
+      </p>
+    </div>
+  </main>
+</div>

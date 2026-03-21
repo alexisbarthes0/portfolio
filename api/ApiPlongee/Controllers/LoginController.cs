@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Driver;
 using ApiPlongee.Models;
 using ApiPlongee.Services;
 
@@ -16,27 +17,73 @@ namespace ApiPlongee.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register(User user)
+        public async Task<IActionResult> Register([FromBody] UserRegisterDto? dto)
         {
-            var existingUser = await _userService.GetByIdentifiantAsync(user.Identifiant);
+            if (dto == null)
+                return BadRequest("Corps de requête invalide.");
+
+            if (string.IsNullOrWhiteSpace(dto.Identifiant) ||
+                string.IsNullOrWhiteSpace(dto.MotDePasse) ||
+                string.IsNullOrWhiteSpace(dto.Nom) ||
+                string.IsNullOrWhiteSpace(dto.Prenom) ||
+                string.IsNullOrWhiteSpace(dto.AdresseMail))
+            {
+                return BadRequest("Tous les champs sont requis.");
+            }
+
+            var identifiant = dto.Identifiant.Trim();
+            var existingUser = await _userService.GetByIdentifiantAsync(identifiant);
             if (existingUser != null)
                 return BadRequest("Identifiant déjà utilisé.");
 
-            await _userService.CreateAsync(user);
+            var user = new User
+            {
+                Identifiant = identifiant,
+                MotDePasse = dto.MotDePasse,
+                Nom = dto.Nom.Trim(),
+                Prenom = dto.Prenom.Trim(),
+                AdresseMail = dto.AdresseMail.Trim(),
+                Niveau = string.Empty
+            };
+
+            try
+            {
+                await _userService.CreateAsync(user);
+            }
+            catch (MongoWriteException ex) when (ex.WriteError?.Code == 11000)
+            {
+                return BadRequest("Identifiant déjà utilisé.");
+            }
+
             return Ok(new { message = "Utilisateur créé avec succès." });
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginRequest request)
+        public async Task<IActionResult> Login([FromBody] LoginRequest? request)
         {
-            var user = await _userService.GetByIdentifiantAsync(request.Identifiant);
+            if (request == null)
+                return BadRequest("Corps de requête invalide.");
+            if (string.IsNullOrWhiteSpace(request.Identifiant) || string.IsNullOrWhiteSpace(request.MotDePasse))
+                return BadRequest("Identifiant et mot de passe sont requis.");
+
+            var user = await _userService.GetByIdentifiantAsync(request.Identifiant.Trim());
             if (user == null)
                 return Unauthorized("Identifiant invalide.");
 
-            if (!_userService.VerifyPassword(request.MotDePasse, user.MotDePasse))
+            if (!await _userService.VerifyPasswordAsync(request.MotDePasse, user))
                 return Unauthorized("Mot de passe incorrect.");
 
-            return Ok(new { message = "Connexion réussie", user });
+            var dto = new UserPublicDto
+            {
+                Id = user.Id,
+                Identifiant = user.Identifiant,
+                Nom = user.Nom,
+                Prenom = user.Prenom,
+                AdresseMail = user.AdresseMail,
+                Niveau = user.Niveau
+            };
+
+            return Ok(new { message = "Connexion réussie", user = dto });
         }
     }
 }

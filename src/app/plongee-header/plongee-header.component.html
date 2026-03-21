@@ -7,9 +7,10 @@
   
   </div>
   <nav class="nav-links">
-    <a routerLink="/plongée" routerLinkActive="active">Accueil</a>
-    <a routerLink="/mes-plongées" routerLinkActive="active">Mes plongées</a>
-    <a routerLink="/plongée-login" routerLinkActive="active">Login</a>
-
+    <a routerLink="/plongée" routerLinkActive="active">Carnet</a>
+    <a *ngIf="session.isLoggedIn()" routerLink="/plongée/nouvelle" routerLinkActive="active">Nouvelle plongée</a>
+    <a *ngIf="!session.isLoggedIn()" routerLink="/plongée-login" routerLinkActive="active">Connexion</a>
+    <a *ngIf="!session.isLoggedIn()" routerLink="/plongée-register" routerLinkActive="active">Inscription</a>
+    <button *ngIf="session.isLoggedIn()" type="button" class="logout-btn" (click)="logout()">Déconnexion</button>
   </nav>
 </header>

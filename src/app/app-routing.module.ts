@@ -9,8 +9,9 @@ import { SituationComponent } from './situation/situation.component';
 import { MentionsLegalesComponent } from './mentions-legales/mentions-legales.component';
 import { PlongeeFrontComponent } from './plongee-front/plongee-front.component';
 import { PlongeeLoginComponent } from './plongee-login/plongee-login.component';
-import { PlongeeDataComponent } from './plongee-data/plongee-data.component';
 import { PlongeeRegisterComponent } from './plongee-register/plongee-register.component';
+import { PlongeeNouvelleComponent } from './plongee-nouvelle/plongee-nouvelle.component';
+import { PlongeeAuthGuard } from './plongee-auth.guard';
 import { AdminComponent } from './admin/admin.component';
 import { AdminPortalComponent } from './admin-portal/admin-portal.component';
 import { AdminAuthGuard } from './admin/admin-auth.guard';
@@ -23,9 +24,10 @@ const routes: Routes = [
   {path:'contact', component:ContactComponent},
   {path:'mentions-legales', component:MentionsLegalesComponent},
   {path:'situation', component:SituationComponent},
-  {path:'plongée', component:PlongeeFrontComponent},
+  {path:'plongée', component:PlongeeFrontComponent, canActivate:[PlongeeAuthGuard]},
+  {path:'plongée/nouvelle', component:PlongeeNouvelleComponent, canActivate:[PlongeeAuthGuard]},
   {path:'plongée-login', component:PlongeeLoginComponent},
-  {path:'mes-plongées', component:PlongeeDataComponent},
+  {path:'mes-plongées', redirectTo:'plongée', pathMatch:'full'},
   {path:'plongée-register', component:PlongeeRegisterComponent},
   {path:'admin', component:AdminComponent},
   {path:'admin-portal', component:AdminPortalComponent, canActivate:[AdminAuthGuard]},

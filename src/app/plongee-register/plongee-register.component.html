@@ -4,39 +4,36 @@
     <div class="login-container">
 
       <div class="login-box">
-        <form (ngSubmit)="onSubmit()">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
           <div class="form-group">
             <label for="identifiant">Identifiant</label>
-            <input type="text" id="identifiant" name="identifiant"
-              [(ngModel)]="user.identifiant" />
+            <input type="text" id="identifiant" formControlName="identifiant" />
           </div>
 
           <div class="form-group">
             <label for="motdepasse">Mot de passe</label>
-            <input type="password" id="motdepasse" name="motDePasse"
-              [(ngModel)]="user.motDePasse" />
+            <input type="password" id="motdepasse" formControlName="motDePasse" />
           </div>
 
           <div class="form-group">
             <label for="nom">Nom</label>
-            <input type="text" id="nom" name="nom"
-              [(ngModel)]="user.nom" />
+            <input type="text" id="nom" formControlName="nom" />
           </div>
 
           <div class="form-group">
             <label for="prenom">Prénom</label>
-            <input type="text" id="prenom" name="prenom"
-              [(ngModel)]="user.prenom" />
+            <input type="text" id="prenom" formControlName="prenom" />
           </div>
 
           <div class="form-group">
             <label for="adresseMail">Adresse email</label>
-            <input type="text" id="adresseMail" name="adresseMail"
-              [(ngModel)]="user.adresseMail" />
+            <input type="email" id="adresseMail" formControlName="adresseMail" />
           </div>
 
-          <button type="submit" class="login-btn">Créer un compte</button>
+          <button type="submit" class="login-btn" [disabled]="loading || form.invalid">Créer un compte</button>
+          <p *ngIf="message" class="success-msg">{{ message }}</p>
+          <p *ngIf="error" class="error-msg">{{ error }}</p>
 
           <p class="register-text">
             Déjà un compte? <a routerLink="/plongée-login">Connectez-vous ici!</a>

@@ -1,23 +1,27 @@
 <div class="app-wrapper">
   <app-plongee-header></app-plongee-header>
   <main class="main-content">
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="identifiant">Identifiant</label>
-        <input type="text" id="identifiant" formControlName="identifiant" />
+    <div class="login-container">
+      <div class="login-box">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="identifiant">Identifiant</label>
+            <input type="text" id="identifiant" formControlName="identifiant" />
+          </div>
+
+          <div class="form-group">
+            <label for="motdepasse">Mot de passe</label>
+            <input type="password" id="motdepasse" formControlName="motDePasse" />
+          </div>
+
+          <button type="submit" class="login-btn" [disabled]="loading">Se connecter</button>
+          <p *ngIf="error" class="error">{{ error }}</p>
+
+          <p class="register-text">
+            Pas de compte ? <a routerLink="/plongée-register">Créez-en un ici</a>
+          </p>
+        </form>
       </div>
-    
-      <div class="form-group">
-        <label for="motdepasse">Mot de passe</label>
-        <input type="password" id="motdepasse" formControlName="motDePasse" />
-      </div>
-    
-      <button type="submit" class="login-btn" [disabled]="loading">Se connecter</button>
-      <p *ngIf="error" class="error">{{ error }}</p>
-    
-      <p class="register-text">
-        Pas de compte ? <a routerLink="/plongée-register">Créez-en un ici</a>
-      </p>
-    </form>
+    </div>
   </main>
 </div>

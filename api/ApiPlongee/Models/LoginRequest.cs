@@ -1,8 +1,12 @@
-namespace ApiPlongee.Models
+using System.Text.Json.Serialization;
+
+namespace ApiPlongee.Models;
+
+public class LoginRequest
 {
-    public class LoginRequest
-    {
-        public string Identifiant { get; set; } = null!;
-        public string MotDePasse { get; set; } = null!;
-    }
+    [JsonPropertyName("identifiant")]
+    public string Identifiant { get; set; } = string.Empty;
+
+    [JsonPropertyName("motDePasse")]
+    public string MotDePasse { get; set; } = string.Empty;
 }

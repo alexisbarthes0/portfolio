@@ -72,3 +72,15 @@ input:focus {
 .register-text a:hover {
   text-decoration: underline;
 }
+
+.success-msg {
+  margin-top: 1rem;
+  color: #2e7d32;
+  font-size: 0.9rem;
+}
+
+.error-msg {
+  margin-top: 1rem;
+  color: #c62828;
+  font-size: 0.9rem;
+}

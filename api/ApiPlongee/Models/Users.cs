@@ -3,6 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace ApiPlongee.Models
 {
+    [BsonIgnoreExtraElements]
     public class User
     {
         [BsonId]
