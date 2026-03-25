@@ -12,4 +12,6 @@ public class PlongeeCreateDto
     public string? EspecesObservees { get; set; }
     public string? EvenementsMarquants { get; set; }
     public string? Remarques { get; set; }
+    public int? Duration {get; set;}
+    public string? Titre {get; set;}
 }

@@ -6,6 +6,10 @@
       <div class="form-card">
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
           <div class="form-group">
+            <label for="titre">Titre</label>
+            <input type="text" id="titre" formControlName="titre" />
+          </div>
+          <div>
             <label for="lieu">Lieu</label>
             <input type="text" id="lieu" formControlName="lieu" />
           </div>
@@ -34,13 +38,19 @@
             <textarea id="especes" rows="3" formControlName="especesObservees"></textarea>
           </div>
           <div class="form-group">
-            <label for="events">Évènements marquants</label>
+            <label for="events">Type</label>
             <textarea id="events" rows="3" formControlName="evenementsMarquants"></textarea>
           </div>
           <div class="form-group">
             <label for="remarques">Autres remarques</label>
             <textarea id="remarques" rows="3" formControlName="remarques"></textarea>
           </div>
+          <!-- A partir d'ici: modification épreuve E6 -->
+            <div class="form-group">
+            <label for="duration">Durée (en minutes)</label>
+            <input type="number" id="duration" formControlName="duration" placeholder="ex. 45" min="0" />
+          </div>
+           <!-- Fin de modification -->
           <button type="submit" class="primary-btn" [disabled]="loading || form.invalid">
             Enregistrer
           </button>

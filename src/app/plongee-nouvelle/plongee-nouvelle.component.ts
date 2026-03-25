@@ -22,7 +22,12 @@ export class PlongeeNouvelleComponent {
     temperatureEau: [''],
     especesObservees: [''],
     evenementsMarquants: [''],
-    remarques: ['']
+    remarques: [''],
+    // Début Modification
+    duration: [''],
+    titre:['']
+    //Fin modification
+
   });
 
   constructor(
@@ -53,7 +58,11 @@ export class PlongeeNouvelleComponent {
         temperatureEau: v.temperatureEau || undefined,
         especesObservees: v.especesObservees || undefined,
         evenementsMarquants: v.evenementsMarquants || undefined,
-        remarques: v.remarques || undefined
+        remarques: v.remarques || undefined,
+        //début modification
+        duration: Number(v.duration),
+        titre: v.titre || undefined,
+        //Fin modification
       })
       .subscribe({
         next: () => {

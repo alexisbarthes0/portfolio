@@ -13,22 +13,27 @@
       <div *ngIf="!loading && !loadError && plongees.length === 0" class="empty-state">
         Aucune plongée enregistrée pour le moment. Utilisez le bouton ci-dessus pour ajouter la première.
       </div>
-
+      <div class="form-group">
+            <input type="text" id="filtre" formControlName="filtre" placeholder="Filtrer"/>
+            <input type="text" id="filtre" formControlName="filtre" placeholder="par" />
+          </div>
       <ul class="dive-list" *ngIf="plongees.length > 0">
         <li class="dive-card" *ngFor="let p of plongees">
           <div class="dive-card-head">
+            <span class="dive-titre">{{p.titre}}</span>
             <span class="dive-lieu">{{ p.lieu }}</span>
             <span class="dive-date">{{ p.date | date: 'mediumDate' }}</span>
           </div>
           <dl class="dive-meta">
+            <div><dt>Type</dt><dd>{{p.evenementsMarquants}}</dd></div>
             <div><dt>Palanquée</dt><dd>{{ p.palanquee || '—' }}</dd></div>
             <div><dt>Directeur</dt><dd>{{ p.directeurPlongee || '—' }}</dd></div>
-            <div><dt>Prof. max</dt><dd>{{ p.profMax }} m</dd></div>
+            <div><dt>Prof. max</dt><dd>{{ p.profMax }} mètres</dd></div>
+            <div><dt>Durée</dt><dd>{{ (p.duration ?? p.duree ?? 0) }} minutes</dd></div>
           </dl>
           <div class="dive-extra" *ngIf="p.temperatureEau || p.especesObservees || p.evenementsMarquants || p.remarques">
             <p *ngIf="p.temperatureEau"><strong>Température :</strong> {{ p.temperatureEau }}</p>
             <p *ngIf="p.especesObservees"><strong>Espèces :</strong> {{ p.especesObservees }}</p>
-            <p *ngIf="p.evenementsMarquants"><strong>Évènements :</strong> {{ p.evenementsMarquants }}</p>
             <p *ngIf="p.remarques"><strong>Remarques :</strong> {{ p.remarques }}</p>
           </div>
         </li>

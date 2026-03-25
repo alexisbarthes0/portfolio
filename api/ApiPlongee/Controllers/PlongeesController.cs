@@ -35,7 +35,10 @@ public class PlongeesController : ControllerBase
             return BadRequest("Le lieu est requis.");
         if (string.IsNullOrWhiteSpace(dto.DirecteurPlongee))
             return BadRequest("Le directeur de plongée est requis.");
-
+        //modif
+        // if (string.IsNullOrWhiteSpace(dto.Titre))
+        //     return BadRequest("Le titre est requis.");
+        //fin modif
         var plongee = new Plongee
         {
             UserId = dto.UserId,
@@ -47,7 +50,11 @@ public class PlongeesController : ControllerBase
             TemperatureEau = string.IsNullOrWhiteSpace(dto.TemperatureEau) ? null : dto.TemperatureEau.Trim(),
             EspecesObservees = string.IsNullOrWhiteSpace(dto.EspecesObservees) ? null : dto.EspecesObservees.Trim(),
             EvenementsMarquants = string.IsNullOrWhiteSpace(dto.EvenementsMarquants) ? null : dto.EvenementsMarquants.Trim(),
-            Remarques = string.IsNullOrWhiteSpace(dto.Remarques) ? null : dto.Remarques.Trim()
+            Remarques = string.IsNullOrWhiteSpace(dto.Remarques) ? null : dto.Remarques.Trim(),
+            // Compat: l'app avait déjà un champ "Duree" (duree) exposé côté front
+            Duree = dto.Duration ?? 0,
+            Duration = dto.Duration,
+            Titre = string.IsNullOrWhiteSpace(dto.Titre) ? null : dto.Titre.Trim(),
         };
 
         var created = await _plongeeService.CreateAsync(plongee);

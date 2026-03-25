@@ -37,6 +37,12 @@ public class Plongee
 
     [BsonElement("remarques")]
     public string? Remarques { get; set; }
+    //Début modif
+    [BsonElement("duration")]
+    public int? Duration { get; set; }
+    [BsonElement("titre")]
+    public string? Titre { get; set; }
+    //fin modif
 }
 
 public class Gaz

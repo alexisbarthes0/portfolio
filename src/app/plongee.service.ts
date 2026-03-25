@@ -17,6 +17,8 @@ export interface Plongee {
   especesObservees?: string;
   evenementsMarquants?: string;
   remarques?: string;
+  duration?:number;
+  titre?:string;
 }
 
 export interface PlongeeCreatePayload {
@@ -30,6 +32,8 @@ export interface PlongeeCreatePayload {
   especesObservees?: string;
   evenementsMarquants?: string;
   remarques?: string;
+  duration?:number;
+  titre?:string;
 }
 
 @Injectable({

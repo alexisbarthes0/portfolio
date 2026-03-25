@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiPlongee")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3d7e94e1b33edc14b541368d11808b2ddac734c0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6635e81733f5594a4a681dfeca03aad8fe22a7cc")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiPlongee")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiPlongee")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
